@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nick Reitnour - {{pagetitle}}</title>
+	<link rel="stylesheet" href="static/style.css">
+
+</head>
+<body>
+	<header>
+		<h1>Nick Reitnour</h1>
+	</header>
+	<nav>
+			<ul>
+				<li><a href = "home.html">{{Home}}</a></li>
+				<li><a href = "school.html">{{School}}</a></li>
+				<li><a href = "family.html">{{Family}}</a></li>
+				<li><a href = "login.html">{{Login}}</a></li>
+			</ul>
+	</nav>
+	<div id="content">
+<p>
+{{badcredentials}}
+</p>
+
+{% block content %}
+	Page specific content
+{% endblock %}
+	</div>
+
+	<footer>
+		<p>Copyright &copy; Nick Reitnour</p>
+	</footer>
+</body>
+</html>
