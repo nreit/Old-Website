@@ -5,46 +5,57 @@ body{
 }
 
 header{
-	background-color: #30A4E6;
-	position: relative;
+	background-image: url("header.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 	margin: 0;
 	padding: 0;
 	top: -20px;
 	width: 100%;
-	height: 200px;
+	height: 225px;
 	float: left;
 	clear: none; /*These last two lines make it possible to clear gap between header and nav*/
 }
 
-h1{
-	text-align: center;
+header img{
+	padding-top: 20px;
+	display: block;
+	margin: 0 auto;
 }
 
-nav ul {
-  list-style: none;
-  background-color: #092F64;
-  text-align: center;
-  padding: 0;
-  margin: 0;
+h1{
+	text-align: center;
+	color: white;
+	margin-top: 0;
+}
+
+nav ul{
+	list-style: none;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+#graygrad{
+	background-color: #BBBEC4;
+	background: -webkit-linear-gradient(gray, white);
+	background: -o-linear-gradient(gray, white);
+	background: -moz-linear-gradient(gray, white);
+	background: linear-gradient(gray, white);
 }
 
 nav li {
-    width: 20%;
-    border-right: 1px solid white;
-    border-left: 1px solid white;
+	width: 24.5%;
     height: 50px;
     line-height: 50px;
     display: inline-block;
   }
-/*
-#nav_wrapper{
-	position: relative;
-	width: 100%;
-	height: 50px;
-	left: -5%;
-	background-color: yellow;
-}
 
+ .borderright {
+ 	border-right: 1px solid gray;
+ }
+
+/*
 #nav ul{
 	list-style-type: none;
 	position: relative;
@@ -58,7 +69,7 @@ nav li {
 }*/
 
 nav ul li:hover{
-	background-color: #57DEE3;
+	background-color: white;
 }
 
 a {
@@ -66,5 +77,20 @@ a {
 }
 
 #content{
-	padding: 5%;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+footer{
+	position: relative;
+	height: 40px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	margin-bottom: 0px;
+	background-color: #C4C4C4;
+	background: -webkit-linear-gradient(gray, white);
+	background: -o-linear-gradient(gray, white);
+	background: -moz-linear-gradient(gray, white);
+	background: linear-gradient(gray, white);
 }
