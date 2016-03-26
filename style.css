@@ -1,7 +1,14 @@
+/*BASE TEMPLATE */
 body{
 	background-color: #ACD4EB;
+	background: -webkit-linear-gradient(left, #4F9CE2 , #9BC0E9); /*Safari*/
+	background: -o-linear-gradient(right, #4F9CE2, #9BC0E9); /*Opera #C5DAF0*/
+	background: -moz-linear-gradient(right, #4F9CE2, #9BC0E9); /* Firefox*/
+	background: linear-gradient(to right, #4F9CE2 , #9BC0E9); /* Standard syntax */
+	color: white;
 	margin: 0;
 	padding: 0;
+	font-family: Avenir;
 }
 
 header{
@@ -14,7 +21,7 @@ header{
 	width: 100%;
 	height: 225px;
 	float: left;
-	clear: none; /*These last two lines make it possible to clear gap between header and nav*/
+	clear: none;
 }
 
 header img{
@@ -36,7 +43,7 @@ nav ul{
 	margin: 0;
 }
 
-#graygrad{
+.graygrad{
 	background-color: #BBBEC4;
 	background: -webkit-linear-gradient(gray, white);
 	background: -o-linear-gradient(gray, white);
@@ -55,19 +62,6 @@ nav li {
  	border-right: 1px solid gray;
  }
 
-/*
-#nav ul{
-	list-style-type: none;
-	position: relative;
-	text-align: center;
-}
-
-#nav ul li{
-	display: inline-block;
-	top: 50%;
-	width: 20%;
-}*/
-
 nav ul li:hover{
 	background-color: white;
 }
@@ -76,14 +70,25 @@ a {
 	text-decoration: none;
 }
 
-#content{
+.content{
 	padding-left: 5%;
 	padding-right: 5%;
 }
 
-footer{
+/*ABOUT ME PAGE*/
+.sectioncontainer{
+	display: inline-block;
+}
+
+/*PROFESSIONAL PAGE */
+.professionalContent{
 	position: relative;
-	height: 40px;
+	padding-top: 50px;
+}
+
+/*BASE TEMPLATE footer */
+footer{
+	position: fixed;
 	bottom: 0px;
 	left: 0px;
 	right: 0px;
@@ -93,4 +98,21 @@ footer{
 	background: -o-linear-gradient(gray, white);
 	background: -moz-linear-gradient(gray, white);
 	background: linear-gradient(gray, white);
+}
+
+h3{
+	text-align: center;
+}
+
+/*RESPONSIVE DESIGN */
+@media screen and (max-width: 480px){
+	.webnav{
+		display: none;
+	}
+}
+
+@media screen and (min-width: 480px){
+	.mobilenav{
+		display: none;
+	}
 }
