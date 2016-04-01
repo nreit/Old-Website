@@ -31,42 +31,28 @@ class MainHandler(webapp2.RequestHandler):
 		try:
 			path = self.request.path
 			template = JINJA_ENVIRONMENT.get_template('templates%s'%path)
-			if path == '/home.html':
-				self.response.write(template.render({'title': 'Nick Reitnour', 'pagetitle': 'Home', 'Home':'HOME', 'Family': 'Family', 'School':'School', 'Login':'Login'}))
-			elif path == '/family.html':
-				self.response.write(template.render({'title': 'Family', 'pagetitle': 'Family', 'Home':'Home', 'Family': 'FAMILY', 'School':'School', 'Login':'Login'}))
-			elif path == '/school.html':
-				self.response.write(template.render({'title': 'School', 'pagetitle': 'School', 'Home':'Home', 'Family': 'Family', 'School':'SCHOOL', 'Login':'Login'}))
+			if path == '/':
+				self.response.write(template.render({'title': 'Nick Reitnour', 'pagetitle': 'Home', 'AboutMe':'ABOUT ME', 'Professional': 'Professional', 'PhotoGallery':'Photo Gallery', 'ThankYou':'Thank You'}))
+			elif path == '/aboutme.html':
+				self.response.write(template.render({'title': 'Nick Reitnour', 'pagetitle': 'Home', 'AboutMe':'ABOUT ME', 'Professional': 'Professional', 'PhotoGallery':'Photo Gallery', 'ThankYou':'Thank You'}))
+			elif path == '/professional.html':
+				self.response.write(template.render({'title': 'Professional', 'pagetitle': 'Professional', 'AboutMe':'About Me', 'Professional': 'PROFESSIONAL', 'PhotoGallery':'Photo Gallery', 'ThankYou':'Thank You'}))
+			elif path == '/photogallery.html':
+				self.response.write(template.render({'title': 'Photo Gallery', 'pagetitle': 'Photo Gallery', 'AboutMe':'About Me', 'Professional': 'Professional', 'PhotoGallery':'PHOTO GALLERY', 'ThankYou':'Thank You'}))
+			elif path == '/thankyou.html':
+				self.response.write(template.render({'title': 'Connnect', 'pagetitle': 'Thank You', 'AboutMe':'About Me', 'Professional': 'Professional', 'PhotoGallery':'Photo Gallery', 'ThankYou':'THANK YOU'}))
 			else:
-				self.response.write(template.render({'title': 'Nick Reitnour', 'pagetitle': 'Home', 'Home':'HOME', 'Family': 'Family', 'School':'School', 'Login':'Login'}))
+				self.response.write(template.render({'title': 'Nick Reitnour', 'pagetitle': 'Home', 'AboutMe':'ABOUT ME', 'Professional': 'Professional', 'PhotoGallery':'Photo Gallery', 'ThankYou':'Thank You'}))
 		except:
-			template = JINJA_ENVIRONMENT.get_template('templates/home.html')
-			self.response.write(template.render({'title': 'Nick Reitnour', 'pagetitle': 'Home', 'Home':'HOME', 'Family': 'Family', 'School':'School', 'Login':'Login'}))
+			template = JINJA_ENVIRONMENT.get_template('templates/aboutme.html')
+			self.response.write(template.render({'title': 'Nick Reitnour', 'pagetitle': 'Home', 'AboutMe':'ABOUT ME', 'Professional': 'Professional', 'PhotoGallery':'Photo Gallery', 'ThankYou':'Thank You'}))
 		#outstr = template.render(temp, {})
 		#self.response.out.write(outstr)
 
-class LoginHandler(webapp2.RequestHandler):
-	def get(self):
-		logging.info("GET")
-		template = JINJA_ENVIRONMENT.get_template('templates/login.html')
-		self.response.write(template.render({'title': 'Login', 'pagetitle': 'Login', 'Home':'Home', 'Family': 'Family', 'School':'School', 'Login':'LOGIN'}))
-		
-	def post(self):
-		logging.info("POST")
-		usernameinput = self.request.get('username')
-		passwordinput = self.request.get('pw')
-		if (usernameinput== 'Colleen' and passwordinput=='pass'):
-			template = JINJA_ENVIRONMENT.get_template('templates/loginsuccess.html')
-			self.response.write(template.render({'title': 'Logged in ...', 'pagetitle': 'Successful Login', 'Home':'Home', 'Family': 'Family', 'School':'School', 'Login':'LOGIN'}))
-		else:
-			logging.info("Error: Incorrect login credentials provided")
-			template = JINJA_ENVIRONMENT.get_template('templates/login.html')
-			self.response.write(template.render({'badcredentials': 'Bad Credentials. Try again.', 'title': 'Unsuccessful', 'pagetitle': 'Login', 'Home':'Home', 'Family': 'Family', 'School':'School', 'Login':'LOGIN'}))
-
 app = webapp2.WSGIApplication([
 	('/', MainHandler),
-	('/home.html', MainHandler),
-	('/family.html', MainHandler),
-	('/school.html', MainHandler),
-	('/login.html', LoginHandler),
+	('/aboutme.html', MainHandler),
+	('/professional.html', MainHandler),
+	('/photogallery.html', MainHandler),
+	('/thankyou.html', MainHandler),
 ], debug=True)
