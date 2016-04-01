@@ -9,6 +9,7 @@ body{
 	margin: 0;
 	padding: 0;
 	font-family: Avenir;
+	display: inline-block;
 }
 
 header{
@@ -78,12 +79,58 @@ a {
 /*ABOUT ME PAGE*/
 .sectioncontainer{
 	display: inline-block;
+	margin-bottom: 40px;
+}
+
+.aboutMeDescription{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	height: 400px ;
+	font-size: 20px;
+	line-height: 2em;
+	font-weight: lighter;
 }
 
 /*PROFESSIONAL PAGE */
+.panel-body{
+	color: black;
+}
+
 .professionalContent{
 	position: relative;
 	padding-top: 50px;
+}
+
+/*PHOTO GALLERY PAGE */
+
+.photogallery{
+	display: inline-block;
+	position: relative;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	text-align: center;
+}
+
+h3{
+	color: black;
+}
+
+/*THANK YOU*/
+h2{
+	text-align: center;
+}
+
+.personthanks{
+	float: left;
+	display: inline;
+}
+
+.thankswords{
+	margin-left: 200px;
+	line-height: 2em;
 }
 
 /*BASE TEMPLATE footer */
@@ -92,6 +139,7 @@ footer{
 	bottom: 0px;
 	left: 0px;
 	right: 0px;
+	height: 40px;
 	margin-bottom: 0px;
 	background-color: #C4C4C4;
 	background: -webkit-linear-gradient(gray, white);
@@ -100,19 +148,52 @@ footer{
 	background: linear-gradient(gray, white);
 }
 
+.footerpic{
+	z-index: 20;
+}
+
 h3{
 	text-align: center;
 }
 
 /*RESPONSIVE DESIGN */
 @media screen and (max-width: 480px){
+	.mobilenav{
+		position: relative;
+	}
+	header{
+		position: relative;
+		top: 50px;
+	}
 	.webnav{
+		display: none;
+	}
+
+	.bigimage{
+		display: none;
+	}
+
+	.aboutMeIcon{
+		display: none;
+	}
+	.mobileContentStyling{
+		position: relative;
+		padding-top: 50px;
+	}
+
+	.content{
+		clear: both;
+	}
+	.largeProfessional{
 		display: none;
 	}
 }
 
 @media screen and (min-width: 480px){
 	.mobilenav{
+		display: none;
+	}
+	.mobileProfessional{
 		display: none;
 	}
 }
