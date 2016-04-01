@@ -54,8 +54,8 @@ nav ul{
 
 nav li {
 	width: 24.5%;
-    height: 50px;
-    line-height: 50px;
+    height: 35px;
+    line-height: 35px;
     display: inline-block;
   }
 
@@ -63,17 +63,24 @@ nav li {
  	border-right: 1px solid gray;
  }
 
-nav ul li:hover{
+li:hover{
 	background-color: white;
 }
 
 a {
 	text-decoration: none;
 }
+.navigationmenu{
+	font-size: 15px;
+}
 
 .content{
 	padding-left: 5%;
 	padding-right: 5%;
+}
+
+nav ul a:active{
+	background: blue;
 }
 
 /*ABOUT ME PAGE*/
@@ -98,19 +105,26 @@ a {
 }
 
 .professionalContent{
-	position: relative;
 	padding-top: 50px;
+}
+
+.largeProfessional{
+	position: absolute;
 }
 
 /*PHOTO GALLERY PAGE */
 
-.photogallery{
+.picture{
 	display: inline-block;
 	position: relative;
 	padding-right: 20px;
 	padding-left: 20px;
 	padding-top: 50px;
 	padding-bottom: 50px;
+	text-align: center;
+}
+
+.photogallery{
 	text-align: center;
 }
 
@@ -135,21 +149,23 @@ h2{
 
 /*BASE TEMPLATE footer */
 footer{
-	position: fixed;
+	position: static;
 	bottom: 0px;
 	left: 0px;
 	right: 0px;
-	height: 40px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
 	margin-bottom: 0px;
 	background-color: #C4C4C4;
-	background: -webkit-linear-gradient(gray, white);
-	background: -o-linear-gradient(gray, white);
-	background: -moz-linear-gradient(gray, white);
-	background: linear-gradient(gray, white);
+	background: -webkit-linear-gradient(#D4D4D4, white);
+	background: -o-linear-gradient(#D4D4D4, white);
+	background: -moz-linear-gradient(#D4D4D4, white);
+	background: linear-gradient(#D4D4D4, white);
 }
 
-.footerpic{
-	z-index: 20;
+.socialmediaicon{
+	padding: 10px;
 }
 
 h3{
@@ -189,9 +205,38 @@ h3{
 	}
 }
 
-@media screen and (min-width: 480px){
+@media screen and (max-width: 760px){
+	.mobilenav{
+		position: relative;
+	}
+	header{
+		position: relative;
+		top: 50px;
+	}
+	.webnav{
+		display: none;
+	}
+	.mobileContentStyling{
+		position: relative;
+		padding-top: 50px;
+	}
+
+	.content{
+		clear: both;
+	}
+
+}
+
+@media screen and (min-width: 760px){
 	.mobilenav{
 		display: none;
+	}
+	.webnav{
+		display: relative;
+	}
+	header{
+		position: relative;
+		top: 0px;
 	}
 	.mobileProfessional{
 		display: none;
